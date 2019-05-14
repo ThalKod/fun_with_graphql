@@ -28,19 +28,22 @@ const posts = [
     id: 1,
     title: "My Title",
     body: "That's the body",
-    published: true
+    published: true,
+    author: 1
   },
   {
     id: 2,
     title: "My asdasd",
     body: "That's theasdadfppppdfpgppg body",
-    published: false
+    published: false,
+    author: 1
   },
   {
     id: 3,
     title: "My Tiasdasdtle",
     body: "That's theasdsdasd body",
-    published: true
+    published: true,
+    author: 2
   }
 ];
 
@@ -58,6 +61,7 @@ const typeDefs = `
       name: String!
       email: String! 
       age: Int
+      posts: [Post!]!
   }
   
   type Post {
@@ -65,6 +69,7 @@ const typeDefs = `
       title: String!
       body: String!
       published: Boolean!
+      author: User!
   }
 `;
 
@@ -96,6 +101,20 @@ const resolvers = {
       body: "The body",
       published: true
     })
+  },
+  Post: {
+    author: (parent, args, ctx, info) => {
+      return users.find((user) => {
+        return user.id === parent.author
+      });
+    }
+  },
+  User: {
+    posts: (parent, args, ctx, info) => {
+     return posts.filter(post => {
+        return parent.id === post.id;
+      })
+    }
   }
 };
 
