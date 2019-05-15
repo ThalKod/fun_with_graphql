@@ -50,11 +50,15 @@ const posts = [
 const comments = [
   {
     id: 1,
-    text: "my First comment"
+    text: "my First comment",
+    author: 1,
+    post: 1
   },
   {
     id: 2,
-    text: "my second comment"
+    text: "my second comment",
+    author: 2,
+    post: 1
   }
 ];
 
@@ -64,8 +68,7 @@ const typeDefs = `
       posts(query: String): [Post!]!
       users(query: String): [User!]!
       me: User!
-      post: Post!
-      comment: [Comment!]!
+      comments: [Comment!]!
   }
   
   type User {
@@ -74,6 +77,7 @@ const typeDefs = `
       email: String! 
       age: Int
       posts: [Post!]!
+      comments: [Comment!]!
   }
   
   type Post {
@@ -82,11 +86,14 @@ const typeDefs = `
       body: String!
       published: Boolean!
       author: User!
+      comments: [Comment!]!
   }
   
   type Comment {
     id: ID!
     text: String!
+    author: User!
+    post: Post!
   }
 `;
 
@@ -112,13 +119,7 @@ const resolvers = {
         name: "Miek",
         email: "thal@mail.com"
     }),
-    post: () => ({
-      id: "alknadf",
-      title: "The title",
-      body: "The body",
-      published: true
-    }),
-    comment: (parent, args, ctx, info) => {
+    comments: (parent, args, ctx, info) => {
       return comments;
     }
   },
@@ -127,12 +128,34 @@ const resolvers = {
       return users.find((user) => {
         return user.id === parent.author
       });
+    },
+    comments: (parent, args, ctx, info) => {
+      return comments.filter(comment => {
+        return parent.id === comment.post
+      });
     }
   },
   User: {
     posts: (parent, args, ctx, info) => {
      return posts.filter(post => {
         return parent.id === post.id;
+      })
+    },
+    comments: (parent, args, ctx, info) => {
+      return comments.filter(comment => {
+        return parent.id === comment.author;
+      })
+    }
+  },
+  Comment: {
+    author: (parent, args, ctx, info) => {
+      return users.find(user => {
+        return parent.author === user.id;
+      })
+    },
+    post: (parent, args, ctx, info) => {
+      return posts.find(post => {
+        return parent.post === post.id;
       })
     }
   }
