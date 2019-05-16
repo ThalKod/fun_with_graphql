@@ -1,4 +1,5 @@
 import { GraphQLServer } from "graphql-yoga";
+import uuidv4 from "uuid/v4";
 
 // ---------------- Graph QL types --------------------------
 // Scalar types:  String, Boolean, Int, Float, ID
@@ -71,6 +72,11 @@ const typeDefs = `
       comments: [Comment!]!
   }
   
+  type Mutation {
+      createUser(name: String!, email: String!, age: Int!): User!
+      createPost(title: String!, body: String!, published: Boolean!, author: ID!): Post!
+  }
+  
   type User {
       id: ID!
       name: String!
@@ -121,6 +127,35 @@ const resolvers = {
     }),
     comments: (parent, args, ctx, info) => {
       return comments;
+    }
+  },
+  Mutation: {
+    createUser: (parent, args, ctx, info) => {
+      const emailTaken = users.some((user) => {
+        return user.email === args.email;
+      });
+
+      if(emailTaken){
+        throw new Error("Email Taken")
+      }
+      const user = {
+        id: uuidv4(),
+        ...args
+      };
+
+      users.push(user);
+      return user;
+    },
+    createPost: (parent, args, ctx, info) => {
+      const userExsist = users.some(user => user.id === args.author);
+      if(!userExsist) throw new Error(" User not found");
+
+      const post = {
+        id: uuidv4(),
+        ...args
+      };
+      posts.push(post);
+      return post;
     }
   },
   Post: {
