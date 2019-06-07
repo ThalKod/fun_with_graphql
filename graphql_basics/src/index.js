@@ -5,61 +5,61 @@ import uuidv4 from "uuid/v4";
 // Scalar types:  String, Boolean, Int, Float, ID
 
 // Demo User Data
-const users = [
+let users = [
   {
-    id: 1,
+    id: "1",
     name: "Thal",
     email: "thal@mail.com",
   },
   {
-    id: 3,
+    id: "3",
     name: "Thaasfwl",
     age: 93,
     email: "thal@mail.com",
   },
   {
-    id: 2,
+    id: "2",
     name: "Jeff",
     email: "thal@mail.com",
   },
 ];
 
-const posts = [
+let posts = [
   {
-    id: 1,
+    id: "1",
     title: "My Title",
     body: "That's the body",
     published: true,
-    author: 1
+    author: "1"
   },
   {
-    id: 2,
+    id: "2",
     title: "My asdasd",
     body: "That's theasdadfppppdfpgppg body",
     published: false,
-    author: 1
+    author: "1"
   },
   {
-    id: 3,
+    id: "3",
     title: "My Tiasdasdtle",
     body: "That's theasdsdasd body",
     published: true,
-    author: 2
+    author: "2"
   }
 ];
 
-const comments = [
+let comments = [
   {
-    id: 1,
+    id: "1",
     text: "my First comment",
-    author: 1,
-    post: 1
+    author: "1",
+    post: "1"
   },
   {
-    id: 2,
+    id: "2",
     text: "my second comment",
-    author: 2,
-    post: 1
+    author: "2",
+    post: "1"
   }
 ];
 
@@ -74,8 +74,11 @@ const typeDefs = `
   
   type Mutation {
       createUser(data: CreateUserInput): User!
+      deleteUser(id: ID!): User!
       createPost(data: CreatePostInput): Post!
+      deletePost(id: ID!): Post!
       createComment(data: CreateCommentInput): Comment!
+      deleteComment(id: ID!): Comment!
   }
   
  input CreateUserInput{
@@ -130,7 +133,7 @@ const resolvers = {
     users: (parent, args, ctx, info) => {
       if(!args.query) return users;
       return users.filter((user) => {
-        return user.name.toLowerCase().includes(args.query.toLowerCase());
+        return users.name.toLowerCase().includes(args.query.toLowerCase());
       })
     },
     posts: (parents, args, ctx, info) => {
@@ -166,6 +169,29 @@ const resolvers = {
       users.push(user);
       return user;
     },
+    deleteUser(parents, args, ctx, info) {
+      const userIndex = users.findIndex((user) => {
+        return user.id === args.id;
+      });
+
+      if(userIndex === -1) throw new Error("User not found");
+
+      const deletedUsers = users.splice(userIndex, 1);
+
+      posts = posts.filter((post) => {
+        const match = post.author === args.id;
+
+        if(match){
+          comments = comments.filter((comment) => {
+            return comment.post !== post.id;
+          })
+        }
+
+          return !match;
+      });
+      comments = comments.filter((comment) => comment.author !== args.id);
+      return deletedUsers[0];
+    },
     createPost: (parent, args, ctx, info) => {
       const userExsist = users.some(user => user.id === args.data.author);
       if(!userExsist) throw new Error(" User not found");
@@ -177,6 +203,21 @@ const resolvers = {
       posts.push(post);
       console.log(posts);
       return post;
+    },
+    deletePost: (parents, args, ctx, info) => {
+      const postIndex = posts.findIndex((post) => args.id === post.id);
+      console.log(postIndex);
+      if(postIndex === -1) throw new Error("Posts not found");
+
+      const deletedPost = posts.splice(postIndex, 1);
+
+      console.log(deletedPost,posts);
+
+      comments = comments.filter((comment) => {
+        return comment.post !== args.id;
+      });
+
+      return deletedPost[0];
     },
     createComment: (parent, args, ctx, info) => {
       const userExist = users.some(user => user.id === args.data.author);
@@ -191,8 +232,20 @@ const resolvers = {
 
       comments.push(comment);
       return comment;
-    }
+    },
+    deleteComment: (parent, args, ctx, info) => {
+      const commentIndex = comments.findIndex(comment => comment.id === args.id);
+
+      if(commentIndex === -1) throw new Error("Comment not found");
+
+      const deletedComments = comments.splice(commentIndex, 1);
+
+      comments = comments.filter((comment) => comment.id !== args.id);
+
+      return deletedComments[0];
+    },
   },
+
   Post: {
     author: (parent, args, ctx, info) => {
       return users.find((user) => {
