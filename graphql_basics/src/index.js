@@ -1,5 +1,4 @@
 import { GraphQLServer } from "graphql-yoga";
-import uuidv4 from "uuid/v4";
 
 import db from "./db";
 import Query from "./resolvers/Query";
