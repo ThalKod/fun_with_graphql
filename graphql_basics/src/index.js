@@ -28,7 +28,14 @@ const server = new GraphQLServer({
   }
 });
 
-server.start(() => {
-  console.log("running...");
+const options = {
+  port: 8000,
+  endpoint: '/graphql',
+  subscriptions: '/subscriptions',
+  playground: '/playground',
+};
+
+server.start(options, (err) => {
+  console.log(`Running on localhost:${err.port}${err.playground}...`);
 });
 

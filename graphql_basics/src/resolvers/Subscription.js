@@ -1,15 +1,19 @@
 const Subscription = {
-  count: {
+  comment: {
+    subscribe: (parents, args, ctx, info) => {
+      const { postID } = args;
+      const { db, pubsub } = ctx;
+
+      const post = db.posts.find((post) => post.id === postID );
+      if(!post) throw new Error("Post not found...");
+
+      return pubsub.asyncIterator(`comment:${postID}`); // channel name for the comments on post of postID
+    }
+  },
+  post: {
     subscribe: (parents, args, ctx, info) => {
       const { pubsub } = ctx;
-      let count = 0;
-      setInterval(() => {
-        count++;
-        pubsub.publish("count", { // publishing the new value
-          count
-        })
-      }, 1000);
-      return pubsub.asyncIterator("count"); // Setting up a channel to subscribe
+      return pubsub.asyncIterator("post");
     }
   }
 };

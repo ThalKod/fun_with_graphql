@@ -64,7 +64,7 @@ const Mutation = {
     console.log(user);
     return user;
   },
-  createPost: (parent, args, { db }, info) => {
+  createPost: (parent, args, { db, pubsub }, info) => {
     const userExsist = db.users.some(user => user.id === args.data.author);
     if(!userExsist) throw new Error(" User not found");
 
@@ -73,9 +73,19 @@ const Mutation = {
       ...args.data
     };
     db.posts.push(post);
+
+    if(args.data.published) {
+      pubsub.publish("post", {
+        post: {
+          mutation: "CREATED",
+          data: post
+        }
+      });
+    }
+
     return post;
   },
-  deletePost: (parents, args, { db }, info) => {
+  deletePost: (parents, args, { db, pubsub }, info) => {
     const postIndex = db.posts.findIndex((post) => args.id === post.id);
     if(postIndex === -1) throw new Error("Posts not found");
 
@@ -85,21 +95,58 @@ const Mutation = {
       return comment.post !== args.id;
     });
 
+    if(deletedPost[0].published){
+      pubsub.publish("post", {
+        post: {
+          mutation: "DELETED",
+          data: deletedPost[0]
+        }
+      })
+    }
+
     return deletedPost[0];
   },
-  updatePost: (parents, args, { db }, info ) => {
+  updatePost: (parents, args, { db, pubsub }, info ) => {
     const {  id, data } = args;
     const post = db.posts.find((post) => post.id === id);
+    const originalPost = { ...post };
 
     if(!post) throw new Error(" Post not found");
 
     if(typeof data.title === "string") post.title = data.title;
     if(typeof data.body === "string") post.body = data.body;
-    if(typeof data.published === "boolean") post.published = data.published;
+    if(typeof data.published === "boolean") {
+      post.published = data.published;
+
+      if(originalPost.published && !post.published){
+        // deleted event
+        pubsub.publish("post", {
+          post: {
+            mutation: "DELETED",
+            data: originalPost
+          }
+        })
+      }else if(!originalPost.published && post.published){
+        // created event
+        pubsub.publish("post", {
+          post: {
+            mutation: "CREATED",
+            data: post
+          }
+        })
+      }
+    }else if(post.published){
+      pubsub.publish("post", {
+        post: {
+          mutation: "UPDATED",
+          data: post
+        }
+      })
+    }
 
     return post;
   },
-  createComment: (parent, args, { db }, info) => {
+  createComment: (parent, args, { db, pubsub }, info) => {
     const userExist = db.users.some(user => user.id === args.data.author);
     const postExist = db.posts.some(post => post.id === args.data.post && post.published === true);
 
@@ -111,6 +158,12 @@ const Mutation = {
     };
 
     db.comments.push(comment);
+
+    // publish to the comment:postID subscripition
+    pubsub.publish(`comment:${args.data.post}`, {
+      comment
+    });
+
     return comment;
   },
   deleteComment: (parent, args, { db }, info) => {
