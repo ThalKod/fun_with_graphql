@@ -1,0 +1,21 @@
+{
+  "name": "graphql_intermediate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "get-schema": "graphql get-schema -p prisma"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
+    "graphql-yoga": "^1.17.4",
+    "prisma-binding": "^2.3.13",
+    "uuid": "^3.3.2"
+  }
+}
