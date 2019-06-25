@@ -15,7 +15,6 @@ services:
             connector: postgres
             host: host.docker.internal
             database: graph_learn_db
-            schema: public
             user: thal
             password: password
             ssl: false

@@ -1,0 +1,5 @@
+type User {
+  id: ID! @id
+  updatedAt: DateTime! @updatedAt
+  createdAt: DateTime! @createdAt
+}
