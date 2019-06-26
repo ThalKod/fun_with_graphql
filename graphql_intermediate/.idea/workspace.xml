@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="807dd312-870c-4c98-a6c9-11e182165a1b" name="Default Changelist" comment="" />
+    <list default="true" id="807dd312-870c-4c98-a6c9-11e182165a1b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -98,20 +100,20 @@
     <session id="-1306587788">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="babelrc" value="1" />
-          <entry key="graphql" value="2" />
+          <entry key="graphql" value="5" />
           <entry key="graphqlconfig" value="2" />
-          <entry key="js" value="3" />
+          <entry key="js" value="8" />
           <entry key="json" value="1" />
           <entry key="prisma" value="12" />
           <entry key="ts" value="2" />
@@ -120,9 +122,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="GraphQL" value="2" />
+          <entry key="GraphQL" value="5" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="3" />
+          <entry key="JavaScript" value="8" />
           <entry key="PLAIN_TEXT" value="12" />
           <entry key="TypeScript" value="2" />
           <entry key="YAML" value="11" />
@@ -136,7 +138,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="graphqlconfig" value="100" />
-          <entry key="js" value="2266" />
+          <entry key="js" value="2492" />
           <entry key="json" value="63" />
           <entry key="prisma" value="1306" />
           <entry key="yml" value="60" />
@@ -145,7 +147,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="163" />
-          <entry key="JavaScript" value="2266" />
+          <entry key="JavaScript" value="2492" />
           <entry key="PLAIN_TEXT" value="1306" />
           <entry key="YAML" value="60" />
         </counts>
@@ -154,20 +156,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prisma/datamodel.prisma">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resolvers/Query.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="218">
+              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/prisma_review/datamodel.prisma">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/schema.graphql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="69">
+              <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prisma.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -183,25 +206,25 @@
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/db.js" />
-        <option value="$PROJECT_DIR$/src/resolvers/Query.js" />
         <option value="$PROJECT_DIR$/src/resolvers/Post.js" />
         <option value="$PROJECT_DIR$/src/resolvers/User.js" />
         <option value="$PROJECT_DIR$/src/resolvers/Comment.js" />
         <option value="$PROJECT_DIR$/src/resolvers/Subscription.js" />
-        <option value="$PROJECT_DIR$/src/schema.graphql" />
         <option value="$PROJECT_DIR$/src/resolvers/Mutation.js" />
         <option value="$PROJECT_DIR$/datamodel.prisma" />
         <option value="$PROJECT_DIR$/prisma.js" />
         <option value="$PROJECT_DIR$/.graphqlconfig" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/prisma.js" />
         <option value="$PROJECT_DIR$/prisma_review_model/prisma.yml" />
         <option value="$PROJECT_DIR$/prisma_review_model/datamodel.prisma" />
         <option value="$PROJECT_DIR$/prisma/datamodel.prisma" />
         <option value="$PROJECT_DIR$/prisma/docker-compose.yml" />
         <option value="$PROJECT_DIR$/prisma_review/prisma.yml" />
         <option value="$PROJECT_DIR$/prisma_review/datamodel.prisma" />
+        <option value="$PROJECT_DIR$/src/prisma.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/schema.graphql" />
+        <option value="$PROJECT_DIR$/src/resolvers/Query.js" />
       </list>
     </option>
   </component>
@@ -219,7 +242,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="x" value="720" />
     <option name="y" value="23" />
     <option name="width" value="720" />
@@ -243,12 +266,13 @@
             <path>
               <item name="graphql_intermediate" type="b2602c69:ProjectViewProjectNode" />
               <item name="graphql_intermediate" type="462c0819:PsiDirectoryNode" />
-              <item name="prisma" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="graphql_intermediate" type="b2602c69:ProjectViewProjectNode" />
               <item name="graphql_intermediate" type="462c0819:PsiDirectoryNode" />
-              <item name="prisma_review" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resolvers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -318,12 +342,13 @@
       <workItem from="1560883292821" duration="156000" />
       <workItem from="1560973689366" duration="4593000" />
       <workItem from="1561043234235" duration="7612000" />
-      <workItem from="1561480078060" duration="2671000" />
+      <workItem from="1561480078060" duration="2964000" />
+      <workItem from="1561558545373" duration="2530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68512000" />
+    <option name="totallyTimeSpent" value="71335000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,9 +360,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="720" y="23" width="720" height="829" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.121212125" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24606581" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -349,7 +375,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.4017199" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4989429" visible="true" weight="0.32732317" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010571" side_tool="true" weight="0.3083538" />
       <window_info anchor="bottom" id="GraphQL" order="11" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -370,7 +396,6 @@
     <entry file="file://$PROJECT_DIR$/src/utils.js" />
     <entry file="file://$PROJECT_DIR$/src/resolvers/Comment.js" />
     <entry file="file://$PROJECT_DIR$/src/resolvers/User.js" />
-    <entry file="file://$PROJECT_DIR$/src/resolvers/Query.js" />
     <entry file="file://$PROJECT_DIR$/src/resolvers/Subscription.js" />
     <entry file="file://$PROJECT_DIR$/src/db.js" />
     <entry file="file://$PROJECT_DIR$/src/resolvers/Post.js" />
@@ -379,9 +404,6 @@
     <entry file="file://$PROJECT_DIR$/prisma/generated/prisma-client/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/.babelrc" />
     <entry file="file://$PROJECT_DIR$/datamodel.prisma" />
-    <entry file="file://$PROJECT_DIR$/src/generated/prisma.graphql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.graphqlconfig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -396,29 +418,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/schema.graphql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-443" />
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="995" column="4" selection-start-line="995" selection-start-column="4" selection-end-line="995" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prisma.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -441,6 +444,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prisma_review/datamodel.prisma">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prisma/datamodel.prisma">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -448,10 +458,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prisma_review/datamodel.prisma">
+    <entry file="file://$PROJECT_DIR$/src/generated/prisma.graphql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prisma.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/schema.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resolvers/Query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>

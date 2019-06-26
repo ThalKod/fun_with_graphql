@@ -5,7 +5,22 @@ const prisma = new Prisma({
   endpoint: "http://localhost:4466",
 });
 
-const createPostForUser = async (authorId, data) => {
+export default prisma;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const createPostForUser = async (authorId, data) => {
   const userExists = await prisma.exists.User({ id: authorId });
 
   if(!userExists) throw new Error("User not found !");
@@ -22,7 +37,7 @@ const createPostForUser = async (authorId, data) => {
   }, "{ author{ id name email posts{ id title published } } }");
 
   return post.author;
-};
+};*/
 
 /*createPostForUser("cjx23quqp010y0685p2ebjeiq", {
   title: "Reading It...",
@@ -31,7 +46,7 @@ const createPostForUser = async (authorId, data) => {
 }).then(user => console.log(JSON.stringify(user, undefined, 2)))
     .catch(err => console.log(err.message));*/
 
-const updatePost = async (postId, data) => {
+/*const updatePost = async (postId, data) => {
   const postExist = await prisma.exists.Post({ id: postId });
 
   if(!postExist) throw new Error("Post not found");
@@ -44,7 +59,7 @@ const updatePost = async (postId, data) => {
   }, "{ id author{ id name email posts{ id title } } }");
 
   return updatedPost.author;
-};
+};*/
 
 /*updatePost("cjx3qd8qn00ip0885imgnv25m", {
   body: "",
