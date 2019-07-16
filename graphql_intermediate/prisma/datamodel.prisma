@@ -17,6 +17,7 @@ type Post {
     comments: [Comment!]! @relation(name: "CommentToPost", onDelete: CASCADE)
 }
 
+
 type Comment {
     id: ID! @id
     text: String!
