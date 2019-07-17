@@ -1,10 +1,26 @@
-import uuidv4 from "uuid/v4";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 const Mutation = {
   createUser: async (parent, args, { prisma }, info) => {
-    return prisma.mutation.createUser({
-      data: args.data
-    }, info);
+      const { data } = args;
+      if(args.data.password.length < 8 ){
+        throw new Error("Password must be 8 charachters at least");
+      }
+
+      const password  = await bcrypt.hash(data.password, 10);
+
+      const user = await prisma.mutation.createUser({
+        data: {
+            ...data,
+            password
+        }
+      });
+
+      return {
+        user,
+        token: jwt.sign({ id: user.id}, "Mysecret")
+      }
     },
   deleteUser: async (parents, args, { db, prisma }, info) => {
 
