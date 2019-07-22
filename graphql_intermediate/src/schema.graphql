@@ -3,6 +3,9 @@ type Query {
     users(query: String): [User!]!
     password: String!
     comments: [Comment!]!
+    post(id: ID!): Post!
+    me: User!
+    myPosts(query: String): [Post!]
 }
 
 type Mutation {
@@ -68,7 +71,7 @@ input UpdateCommentInput {
 type User {
     id: ID!
     name: String!
-    email: String!
+    email: String
     posts: [Post!]!
     comments: [Comment!]!
 }
