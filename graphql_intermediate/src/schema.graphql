@@ -24,6 +24,7 @@ type Mutation {
 type Subscription {
     comment(postID: ID!): CommentSubscriptionPayload!
     post: PostSubscripitionPayload!
+    myPost: PostSubscripitionPayload!
 }
 
 type AuthPayload {
