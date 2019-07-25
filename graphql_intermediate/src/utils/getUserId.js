@@ -5,7 +5,7 @@ export default (request, requireAuth = true) => {
 
   if(header) {
     const token = header.replace("Bearer ", "");
-    const decoded = jwt.verify(token, "Mysecret"); // Will throw an error if not verified
+    const decoded = jwt.verify(token, process.env.JWT_SECRET); // Will throw an error if not verified
     return decoded.id;
   }
 

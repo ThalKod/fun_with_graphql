@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="807dd312-870c-4c98-a6c9-11e182165a1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="807dd312-870c-4c98-a6c9-11e182165a1b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -114,11 +112,11 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="babelrc" value="2" />
-          <entry key="env" value="10" />
+          <entry key="env" value="12" />
           <entry key="gitignore" value="1" />
           <entry key="graphql" value="14" />
           <entry key="graphqlconfig" value="4" />
-          <entry key="js" value="58" />
+          <entry key="js" value="60" />
           <entry key="json" value="6" />
           <entry key="prisma" value="20" />
           <entry key="ts" value="2" />
@@ -127,10 +125,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="10" />
+          <entry key=".env file" value="12" />
           <entry key="GraphQL" value="14" />
           <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="58" />
+          <entry key="JavaScript" value="60" />
           <entry key="PLAIN_TEXT" value="21" />
           <entry key="TypeScript" value="2" />
           <entry key="YAML" value="18" />
@@ -143,11 +141,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="env" value="95" />
+          <entry key="env" value="141" />
           <entry key="gitignore" value="40" />
           <entry key="graphql" value="524" />
           <entry key="graphqlconfig" value="133" />
-          <entry key="js" value="9515" />
+          <entry key="js" value="9554" />
           <entry key="json" value="246" />
           <entry key="prisma" value="1340" />
           <entry key="yml" value="153" />
@@ -155,10 +153,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key=".env file" value="95" />
+          <entry key=".env file" value="141" />
           <entry key="GraphQL" value="524" />
           <entry key="JSON" value="379" />
-          <entry key="JavaScript" value="9515" />
+          <entry key="JavaScript" value="9554" />
           <entry key="PLAIN_TEXT" value="1380" />
           <entry key="YAML" value="153" />
         </counts>
@@ -168,28 +166,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
+        <entry file="file://$PROJECT_DIR$/src/utils/generateToken.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prisma.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prisma/prisma.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="115">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -198,7 +178,7 @@
         <entry file="file://$PROJECT_DIR$/config/dev.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -207,7 +187,16 @@
         <entry file="file://$PROJECT_DIR$/config/prod.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/getUserId.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -234,9 +223,7 @@
         <option value="$PROJECT_DIR$/src/resolvers/index.js" />
         <option value="$PROJECT_DIR$/src/resolvers/Post.js" />
         <option value="$PROJECT_DIR$/src/resolvers/User.js" />
-        <option value="$PROJECT_DIR$/src/utils/getUserId.js" />
         <option value="$PROJECT_DIR$/src/resolvers/Subscription.js" />
-        <option value="$PROJECT_DIR$/src/utils/generateToken.js" />
         <option value="$PROJECT_DIR$/src/resolvers/Mutation.js" />
         <option value="$PROJECT_DIR$/src/utils/hashPassword.js" />
         <option value="$PROJECT_DIR$/prisma/datamodel.prisma" />
@@ -248,10 +235,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/prisma.js" />
-        <option value="$PROJECT_DIR$/config/dev.env" />
-        <option value="$PROJECT_DIR$/config/prod.env" />
         <option value="$PROJECT_DIR$/prisma/prisma.yml" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/config/dev.env" />
+        <option value="$PROJECT_DIR$/config/prod.env" />
+        <option value="$PROJECT_DIR$/src/utils/getUserId.js" />
+        <option value="$PROJECT_DIR$/src/utils/generateToken.js" />
       </list>
     </option>
   </component>
@@ -295,6 +284,11 @@
               <item name="graphql_intermediate" type="b2602c69:ProjectViewProjectNode" />
               <item name="graphql_intermediate" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graphql_intermediate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graphql_intermediate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -380,12 +374,12 @@
       <workItem from="1563978070016" duration="1206000" />
       <workItem from="1563979645674" duration="3621000" />
       <workItem from="1563995103682" duration="31000" />
-      <workItem from="1564058794398" duration="6134000" />
+      <workItem from="1564058794398" duration="6518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121682000" />
+    <option name="totallyTimeSpent" value="122066000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -400,7 +394,7 @@
     <frame x="720" y="23" width="720" height="827" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4963925" visible="true" weight="0.26466382" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4963925" visible="true" weight="0.26466382" />
       <window_info id="Structure" order="1" sideWeight="0.5036075" side_tool="true" weight="0.24453841" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -412,7 +406,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49785408" visible="true" weight="0.65924895" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49785408" visible="true" weight="0.3310153" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.4589708" />
       <window_info anchor="bottom" id="GraphQL" order="11" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -519,13 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/generateToken.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/hashPassword.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -537,13 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/getUserId.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -627,24 +607,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/prisma.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/prod.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/dev.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -655,10 +628,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/utils/getUserId.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="206">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/prod.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/dev.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/generateToken.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
