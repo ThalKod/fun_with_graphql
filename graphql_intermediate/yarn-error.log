@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/thal/.nvm/versions/node/v10.16.0/bin/node /Users/thal/.yarn/bin/yarn.js add jsonwebtoken
+  /Users/thal/.nvm/versions/node/v10.16.0/bin/node /Users/thal/.yarn/bin/yarn.js add @babel/polyfill
 
 PATH: 
   /Users/thal/.nvm/versions/node/v10.16.0/bin:/Users/thal/.yarn/bin:/Users/thal/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/thal/Library/Android/sdk/tools:/Users/thal/Library/Android/sdk/tools/bin:/Users/thal/Library/Android/sdk/platform-tools:/Users/thal/Library/Android/sdk/emulator
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/thal/Web Developement/[FreeCourseSite.com] Udemy - The Modern GraphQL Bootcamp (Advanced Node.js)/fun_with_graphQl/graphql_intermediate/node_modules/@wry/equality/LICENSE'
+  Error: EACCES: permission denied, unlink '/Users/thal/Web Developement/[FreeCourseSite.com] Udemy - The Modern GraphQL Bootcamp (Advanced Node.js)/fun_with_graphQl/graphql_intermediate/node_modules/apollo-link-http-common/CHANGELOG.md'
 
 npm manifest: 
   {
@@ -23,8 +23,10 @@ npm manifest:
     "description": "",
     "main": "index.js",
     "scripts": {
-      "start": "babel-node src/index.js",
-      "get-schema": "graphql get-schema -p prisma"
+      "start": "env-cmd -f ./config/prod.env node dist/index.js",
+      "dev": "env-cmd -f ./config/dev.env babel-node src/index.js",
+      "get-schema": "graphql get-schema -p prisma",
+      "heroku-postbuild":"babel src --out-dir dist --copy-files"
     },
     "author": "",
     "license": "ISC",
@@ -34,7 +36,9 @@ npm manifest:
       "@babel/node": "^7.2.2",
       "@babel/preset-env": "^7.4.4",
       "bcryptjs": "^2.4.3",
+      "env-cmd": "^9.0.3",
       "graphql-yoga": "^1.17.4",
+      "jsonwebtoken": "^8.5.1",
       "prisma-binding": "^2.3.13",
       "uuid": "^3.3.2"
     }
@@ -1251,7 +1255,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
     integrity sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
   
-  commander@^2.8.1:
+  commander@^2.0.0, commander@^2.8.1:
     version "2.20.0"
     resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
     integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
@@ -1517,6 +1521,14 @@ Lockfile:
     integrity sha512-1MkrZNvWTKCaigbn+W15elq2BB/L22nqrSY5DKlo3X6+vclJm8Bb5djXJBmEX6fS3+zCh/F4VBK5Z2KxJt4s2Q==
     dependencies:
       once "^1.4.0"
+  
+  env-cmd@^9.0.3:
+    version "9.0.3"
+    resolved "https://registry.yarnpkg.com/env-cmd/-/env-cmd-9.0.3.tgz#b85265f5a9fd4c5fc7d7eff34e341dc28c3f9801"
+    integrity sha512-DXNeSkLMlYOmq9At+GyvqpdIDuy3gRvz2Z77kN4cAhRbAGVmeiYaqdWqgHSTJ9wCck6ZD0rtbhHVcN7cc2j7rw==
+    dependencies:
+      commander "^2.0.0"
+      cross-spawn "^6.0.0"
   
   es-abstract@^1.5.1:
     version "1.13.0"
@@ -2318,7 +2330,7 @@ Lockfile:
     dependencies:
       minimist "^1.2.0"
   
-  jsonwebtoken@8.5.1:
+  jsonwebtoken@8.5.1, jsonwebtoken@^8.5.1:
     version "8.5.1"
     resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
     integrity sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w==

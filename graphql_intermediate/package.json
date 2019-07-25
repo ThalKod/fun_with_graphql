@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src/index.js",
-    "get-schema": "graphql get-schema -p prisma"
+    "start": "env-cmd -f ./config/prod.env node dist/index.js",
+    "dev": "env-cmd -f ./config/dev.env babel-node src/index.js",
+    "get-schema": "graphql get-schema -p prisma",
+    "heroku-postbuild": "babel src --out-dir dist --copy-files"
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +15,10 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "bcryptjs": "^2.4.3",
+    "env-cmd": "^9.0.3",
     "graphql-yoga": "^1.17.4",
     "jsonwebtoken": "^8.5.1",
     "prisma-binding": "^2.3.13",
