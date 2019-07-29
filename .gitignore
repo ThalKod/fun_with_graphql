@@ -2,4 +2,7 @@ graphql_basics/node_modules
 graphql_intermediate/node_modules
 graphql_intermediate/config/
 graphql_intermediate/dist/
-
+simple_client/node_modules
+simple_client/.idea
+simple_client/dist
+simple_client/.cache
