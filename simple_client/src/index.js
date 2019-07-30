@@ -56,7 +56,7 @@ client.query({
         <h3>${post.title} * ${post.author.name}</h3>
       </div>
     `
-  })
+  });
 
   document.getElementById("posts").innerHTML = html
 })

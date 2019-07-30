@@ -8,7 +8,11 @@
     "dev": "env-cmd -f ./config/dev.env babel-node src/index.js",
     "get-schema": "graphql get-schema -p prisma",
     "heroku-postbuild": "babel src --out-dir dist --copy-files",
-    "test":"jest --watch"
+    "test": "env-cmd -f ./config/test.env jest --watch"
+  },
+  "jest": {
+    "globalSetup": "./tests/jest/globalSetup.js",
+    "globalTeardown": "./tests/jest/globalTeardown.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,12 +22,17 @@
     "@babel/node": "^7.2.2",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "apollo-boost": "^0.4.3",
     "bcryptjs": "^2.4.3",
+    "cross-fetch": "^3.0.4",
     "env-cmd": "^9.0.3",
     "graphql-yoga": "^1.17.4",
     "jest": "^24.8.0",
     "jsonwebtoken": "^8.5.1",
     "prisma-binding": "^2.3.13",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.5.5"
   }
 }
